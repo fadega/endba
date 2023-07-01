@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import { Typography,Button, Box,Link, TextField, Card, CardContent, CardMedia,CardActions,AppBar,CssBaseline,Grid, Toolbar,Container } from '@mui/material';
 import TranslateIcon from '@mui/icons-material/Translate';
+//import { ThemeProvider,createTheme} from '@mui/material/styles';
+// import styled from '@emotion/styled';
 
 export const CustomContainer = styled(Container)`
     padding-top: 20px;
@@ -36,7 +38,7 @@ export const CustomLink = styled(Link)`
 
 export const SearchTextField = styled(TextField)({
     height: '36px',
-    width: '400px',
+    width: '350px',
     '& .MuiOutlinedInput-input': {
         // padding: '15px 10px',
     }
