@@ -1,35 +1,13 @@
 import React, { useState } from "react";
-import {
-  Typography,
-  Button,
-  IconButton,
-  InputAdornment,
-  Box,
-  TextField,
-  Card,
-  CardContent,
-  CardMedia,
-  CardActions,
-  AppBar,
-  CssBaseline,
-  Grid,
-  Toolbar,
-  Container,
-} from "@mui/material";
+import { Typography, Button, IconButton, InputAdornment, Box, TextField,  Card,  CardContent,  CardMedia,  CardActions,  AppBar, CssBaseline, Grid, Toolbar, Container,} from "@mui/material";
 import { PhotoCamera } from "@mui/icons-material";
 import TranslateIcon from "@mui/icons-material/Translate";
 import SearchIcon from "@mui/icons-material/Search";
+import { CustomLink, CustomH1, CustomTranslateIcon} from "./App.Styles";
+import SearchForm from "./components/SearchForm/SearchForm";
 
 //custom styles from different file
-import {
-  CustomLink,
-  CustomSearchButton,
-  SearchTextField,
-  CustomContainer,
-  CustomBox,
-  CustomH1,
-  CustomTranslateIcon,
-} from "./App.Styles";
+
 
 function App() {
   const [searchText, setSearchText] = useState("");
@@ -88,14 +66,15 @@ function App() {
             >
               ብልን ቆላታ እንድባ እንተደሊኹም እንተሓተት?
             </Typography>
-            <Box sx={{ pt: 4, pb: 3, mt: 3, mb: 3 }}>
+            <SearchForm />
+            {/* <Box sx={{ pt: 4, pb: 3, mt: 3, mb: 3 }}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <SearchTextField
                     value={searchText}
                     onChange={(event) => setSearchText(event.target.value)}
                     id="outlined-basic"
-                    label="Search word"
+                    label="English - Blin"
                     variant="outlined"
                     InputProps={{
                       endAdornment: (
@@ -112,7 +91,17 @@ function App() {
                   />
                 </Grid>
               </Grid>
+            </Box> */}
+            <Box sx={{ pt: 4, pb: 3, mt: 3, mb: 3 }}>
+              <Grid container spacing={2} justifyContent="center" dis>
+                <Grid item>
+                  <Typography>Word</Typography>
+                </Grid><Grid item>
+                  <Typography>Music</Typography>
+                </Grid>
+              </Grid>
             </Box>
+
             <div>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
