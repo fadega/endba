@@ -67,31 +67,6 @@ function App() {
               ብልን ቆላታ እንድባ እንተደሊኹም እንተሓተት?
             </Typography>
             <SearchForm />
-            {/* <Box sx={{ pt: 4, pb: 3, mt: 3, mb: 3 }}>
-              <Grid container spacing={2} justifyContent="center">
-                <Grid item>
-                  <SearchTextField
-                    value={searchText}
-                    onChange={(event) => setSearchText(event.target.value)}
-                    id="outlined-basic"
-                    label="English - Blin"
-                    variant="outlined"
-                    InputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <IconButton
-                            aria-label="search"
-                            onClick={handleSearchClick}
-                          >
-                            <SearchIcon />
-                          </IconButton>
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                </Grid>
-              </Grid>
-            </Box> */}
             <Box sx={{ pt: 4, pb: 3, mt: 3, mb: 3 }}>
               <Grid container spacing={2} justifyContent="center" dis>
                 <Grid item>
