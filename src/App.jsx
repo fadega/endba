@@ -4,7 +4,7 @@ import { PhotoCamera } from "@mui/icons-material";
 import TranslateIcon from "@mui/icons-material/Translate";
 import SearchIcon from "@mui/icons-material/Search";
 import { CustomLink, CustomH1, CustomTranslateIcon} from "./App.Styles";
-import SearchForm from "./components/SearchForm/SearchForm";
+import SearchInput from "./components/SearchInput/SearchInput";
 
 //custom styles from different file
 
@@ -17,10 +17,10 @@ function App() {
     console.log("search clicked");
   };
 
-  const cards = [1, 2, 3, 4, 5, 6, 7, 8];
+  const cards = [1, 2, 3, 4];
   return (
     <>
-      {/* <CssBaseline /> */}
+      <CssBaseline />
       <AppBar position="relative" sx={{ bgcolor: "#16385b" }}>
         <Box
           display="flex"
@@ -66,7 +66,7 @@ function App() {
             >
               ብልን ቆላታ እንድባ እንተደሊኹም እንተሓተት?
             </Typography>
-            <SearchForm />
+            <SearchInput />
             <Box sx={{ pt: 4, pb: 3, mt: 3, mb: 3 }}>
               <Grid container spacing={2} justifyContent="center" dis>
                 <Grid item>
