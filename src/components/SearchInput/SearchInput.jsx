@@ -4,7 +4,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import { SearchTextField} from "../../App.Styles";
 
 
-export default function SearchInput({onSearch}) {
+export default function SearchInput(props) {
+// export default function SearchInput({onSearch}) {
     const [input, setInput] = useState("");
 
     const handleInputChange  = (event) => {
@@ -13,8 +14,8 @@ export default function SearchInput({onSearch}) {
     };
     const handleSubmit = (event) => {
       event.preventDefault();
-      console.log("search clicked");
-      onSearch(input);
+      props.onSearch(input);
+    //  onSearch(input);
     };
 
     return (
