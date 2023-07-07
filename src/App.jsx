@@ -11,14 +11,16 @@ import data from "./components/data/endba.json";
 
 function App() {
   const [translation, setTranslation] = useState("");
+  const [searchedWord, setSearchedWord] = useState("");
 
   const handleSearch = (searchWord) => {
+    setSearchedWord(searchWord);
     const wordObj = data.find(obj => Object.keys(obj)[0] === searchWord);
     setTranslation(wordObj ? Object.values(wordObj)[0] : "Not found");
 };
 
 
-  const cards = [1, 2];
+  const cards = [1, 2,3];
   return (
     <>
       <CssBaseline />
@@ -49,7 +51,7 @@ function App() {
       </AppBar>
 
       <main>
-        <div Container sx={{ backgroundColor: "red" }}>
+        <div>
           <Container maxWidth="sm">
             <CustomH1
               variant="h4"
@@ -65,34 +67,20 @@ function App() {
               color="textSecondary"
               paragraph
             >
-              ብልን ቆላታ እንድባ እንተደሊኹም እንተሓተት?
+              ብልን ቆላታ እንድባ 
             </Typography>
             <SearchInput onSearch = {handleSearch}/>
             <Box sx={{ pt: 4, pb: 3, mt: 3, mb: 3 }}>
-              <Grid container spacing={2} justifyContent="center" dis>
+              <Grid container spacing={2} justifyContent="center" >
                 <Grid item>
-                  <Typography><div>Meaning: {translation}</div></Typography>
-                </Grid><Grid item>
-                  <Typography>Music</Typography>
-               
+                  {searchedWord && <Typography variant="h5">Word: {searchedWord}</Typography>}
+                </Grid>
+                <Grid item>
+                  {searchedWord && <Typography variant="h5">Meaning: {translation}</Typography>}
+   
                 </Grid>
               </Grid>
             </Box>
-
-            {/* <div>
-              <Grid container spacing={2} justifyContent="center">
-                <Grid item>
-                  <Button variant="contained" color="primary">
-                    Play Word Game
-                  </Button>
-                </Grid>
-                <Grid item>
-                  <Button variant="outlined" color="primary">
-                    Words by Category
-                  </Button>
-                </Grid>
-              </Grid>
-            </div> */}
           </Container>
         </div>
         <Container maxWidth="md" sx={{ mt: 5 }}>
@@ -128,7 +116,7 @@ function App() {
           </Grid>
         </Container>
       </main>
-      <footer Container sx={{mt:2, with:'80%'}}>
+      <footer  sx={{mt:2, with:'80%'}}>
         <Typography variant="h6" align="center" gutterBottom sx={{m:2}}>
           Footer
         </Typography>
