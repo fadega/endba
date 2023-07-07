@@ -4,36 +4,38 @@ import SearchIcon from "@mui/icons-material/Search";
 import { SearchTextField} from "../../App.Styles";
 
 
-export default function SearchForm() {
-    const [searchText, setSearchText] = useState("");
+export default function SearchInput({onSearch}) {
+    const [input, setInput] = useState("");
 
-    const searchTextChangeHandler = (event) => {
-      console.log("text on change first- ", event.target.value);
-      setSearchText(event.target.value);
-      console.log("text on change - ", searchText);
-  };
-  const handleSearchClick = (event) => {
-    setSearchText((prevState) => {
-      console.log("prev state onclick - ", prevState);
-      return {...prevState, searchText: event.target.value};
-    });
-  };
+    const handleInputChange  = (event) => {
+      setInput(event.target.value);
+
+    };
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log("search clicked");
+      onSearch(input);
+    };
+
     return (
         <div>
               <Box sx={{ pt: 4, pb: 3, mt: 3, mb: 3 }}>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
+                  <form onSubmit={handleSubmit}>
                   <SearchTextField
-                    onChange={searchTextChangeHandler}
                     id="outlined-basic"
                     label="English - Blin"
                     variant="outlined"
+                    value={input}
+                    onChange={handleInputChange}
                     InputProps={{
                       endAdornment: (
                         <InputAdornment position="end">
                           <IconButton
+                            type="submit"
                             aria-label="search"
-                            onClick={handleSearchClick}
+                            // onClick={handleSubmit}
                           >
                             <SearchIcon />
                           </IconButton>
@@ -41,6 +43,7 @@ export default function SearchForm() {
                       ),
                     }}
                   />
+                  </form>
                 </Grid>
               </Grid>
             </Box>

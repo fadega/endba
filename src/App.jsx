@@ -5,19 +5,20 @@ import TranslateIcon from "@mui/icons-material/Translate";
 import SearchIcon from "@mui/icons-material/Search";
 import { CustomLink, CustomH1, CustomTranslateIcon} from "./App.Styles";
 import SearchInput from "./components/SearchInput/SearchInput";
-
+import data from "./components/data/endba.json";
 //custom styles from different file
 
 
 function App() {
-  const [searchText, setSearchText] = useState("");
+  const [translation, setTranslation] = useState("");
 
-  const handleSearchClick = (event) => {
-    setSearchText(searchText);
-    console.log("search clicked");
-  };
+  const handleSearch = (searchWord) => {
+    const wordObj = data.find(obj => Object.keys(obj)[0] === searchWord);
+    setTranslation(wordObj ? Object.values(wordObj)[0] : "Not found");
+};
 
-  const cards = [1, 2, 3, 4];
+
+  const cards = [1, 2];
   return (
     <>
       <CssBaseline />
@@ -66,18 +67,19 @@ function App() {
             >
               ብልን ቆላታ እንድባ እንተደሊኹም እንተሓተት?
             </Typography>
-            <SearchInput />
+            <SearchInput onSearch = {handleSearch}/>
             <Box sx={{ pt: 4, pb: 3, mt: 3, mb: 3 }}>
               <Grid container spacing={2} justifyContent="center" dis>
                 <Grid item>
-                  <Typography>Word</Typography>
+                  <Typography><div>Meaning: {translation}</div></Typography>
                 </Grid><Grid item>
                   <Typography>Music</Typography>
+               
                 </Grid>
               </Grid>
             </Box>
 
-            <div>
+            {/* <div>
               <Grid container spacing={2} justifyContent="center">
                 <Grid item>
                   <Button variant="contained" color="primary">
@@ -90,7 +92,7 @@ function App() {
                   </Button>
                 </Grid>
               </Grid>
-            </div>
+            </div> */}
           </Container>
         </div>
         <Container maxWidth="md" sx={{ mt: 5 }}>
