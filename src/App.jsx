@@ -6,6 +6,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import { CustomLink, CustomH1, CustomTranslateIcon} from "./App.Styles";
 import SearchInput from "./components/SearchInput/SearchInput";
 import data from "./components/data/endba.json";
+import dataFormed from "./components/data/endbaFormed.json";
+
 //custom styles from different file
 
 
@@ -71,12 +73,12 @@ function App() {
             </Typography>
             <SearchInput onSearch = {handleSearch}/>
             <Box sx={{ pt: 4, pb: 3, mt: 3, mb: 3 }}>
-              <Grid container spacing={2} justifyContent="center" >
+              <Grid container spacing={2} justifyContent="center" direction="column">
                 <Grid item>
-                  {searchedWord && <Typography variant="h5">Word: {searchedWord}</Typography>}
+                  {searchedWord && <Typography variant="body1" sx ={{fontWeight:'normal', fontSize:15}}>English: {searchedWord}</Typography>}
                 </Grid>
                 <Grid item>
-                  {searchedWord && <Typography variant="h5">Meaning: {translation}</Typography>}
+                  {searchedWord && <Typography variant="body1" sx ={{fontWeight:'normal', fontSize:15}}>Blin/Blen: {translation}</Typography>}
    
                 </Grid>
               </Grid>
